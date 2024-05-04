@@ -14,7 +14,6 @@ client = MongoClient(DATABASE_URL)
 db = client['FYP']
 collection = db['abs_carbonfibre']
 
-
 # res= get_ml_response(0.2, 45, 90)
 # print("test", res)
 
