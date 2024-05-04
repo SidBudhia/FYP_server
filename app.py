@@ -25,7 +25,7 @@ def hello_server():
 def home():
     data = request.json
 
-    existing_data = collection.find_one({'infill_density': data['num1'], 'raster_angle': data['num2'], 'layer_thickness': data['num3']})
+    existing_data = collection.find_one({'layer_thickness': data['num1'], 'raster_angle': data['num2'], 'infill_density': data['num3']})
     if existing_data:
         output = existing_data['result']
     
@@ -35,7 +35,7 @@ def home():
         output = get_ml_response(data['num1'], data['num2'], data['num3'])
         print("ml_output", output)
         # Save the input and output to the database for future use
-        collection.insert_one({'infill_density': data['num1'], 'raster_angle': data['num2'], 'layer_thickness': data['num3'], 'result': output})
+        collection.insert_one({'layer_thickness': data['num1'], 'raster_angle': data['num2'], 'infill_density': data['num3'], 'result': output})
 
     return jsonify({'result': output})
  
