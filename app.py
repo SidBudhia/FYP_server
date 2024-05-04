@@ -7,10 +7,10 @@ from model.response  import get_ml_response
 app = Flask(__name__)
 CORS(app, origins='*')
 
-# DATABASE_URL="mongodb+srv://SidBudhia:Sid2135@cluster1.6dallrp.mongodb.net/FYP?retryWrites=true&w=majority"
-# client = MongoClient(DATABASE_URL)
+DATABASE_URL="mongodb+srv://SidBudhia:Sid2135@cluster1.6dallrp.mongodb.net/FYP?retryWrites=true&w=majority"
+client = MongoClient(DATABASE_URL)
 
-client = MongoClient('mongodb://localhost:27017/')
+# client = MongoClient('mongodb://localhost:27017/')
 db = client['FYP']
 collection = db['abs_carbonfibre']
 
