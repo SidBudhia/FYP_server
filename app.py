@@ -18,7 +18,11 @@ collection = db['abs_carbonfibre']
 # res= get_ml_response(0.2, 45, 90)
 # print("test", res)
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/", methods=['GET'])
+def hello_server():
+    return "Hello, Server!"
+
+@app.route("/predict", methods=['GET', 'POST'])
 def home():
     data = request.json
 
